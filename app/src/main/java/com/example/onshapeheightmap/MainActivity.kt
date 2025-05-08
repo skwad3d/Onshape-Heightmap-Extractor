@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
         btnConnect.setOnClickListener {
             val authUrl = "https://oauth.onshape.com/oauth/authorize?" +
                 "response_type=code&" +
-                "client_id=YOUR_CLIENT_ID&" + // Replace with your client ID
+                "client_id=steph.andreoli.11@gmail.com" + // Replace with your client ID
                 "redirect_uri=onshapeheightmap://oauth"
             
             startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(authUrl)))
@@ -90,8 +90,8 @@ class MainActivity : AppCompatActivity() {
         val client = OkHttpClient()
         val requestBody = FormBody.Builder()
             .add("grant_type", "authorization_code")
-            .add("client_id", "YOUR_CLIENT_ID") // Replace with your client ID
-            .add("client_secret", "YOUR_CLIENT_SECRET") // Replace with your client secret
+            .add("client_id", "steph.andreoli.11@gmail.com") // Replace with your client ID
+            .add("client_secret", "Tarace78") // Replace with your client secret
             .add("redirect_uri", "onshapeheightmap://oauth")
             .add("code", code)
             .build()
