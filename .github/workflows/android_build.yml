@@ -25,15 +25,15 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-gradle-
     
-    - name: Grant execute permission for gradlew
+    - name: Grant execute permission
       run: chmod +x gradlew
       
     - name: Build with Gradle
-      run: ./gradlew assembleDebug
+      run: ./gradlew assembleDebug --stacktrace
       
     - name: Upload APK
       uses: actions/upload-artifact@v4
       with:
         name: app-debug
         path: app/build/outputs/apk/debug/app-debug.apk
-        retention-days: 5
+        retention-days: 3
